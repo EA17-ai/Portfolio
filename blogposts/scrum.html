@@ -14,6 +14,9 @@
         <link href="../assets/css/noscript.css" rel="stylesheet"/>
     </noscript>
     <style>
+    .content{
+    display:none
+    }
 .avatar {
   vertical-align: middle;
   width: 50px;
@@ -73,18 +76,94 @@
             </ul>
 			<hr>
 			<h2 align="center">SCRUM TEAM</h2>
+                <h6 align="center">Click on Avatar for More Information</h6>
+                <div class="box">
                 <div class="row">
                 <div class="col-4">
-                <div class="image"><img class="avatar" src="../images/blog/scrum/avatar3.png" alt=""/><h4>SCRUM MASTER</h4></div><br>
+                <div class="image" align="center">
+                    <a href="#" onclick="changeContent(1); return false;"><img class="avatar" src="../images/blog/scrum/avatar3.png" alt=""/>
+                        <h4>SCRUM MASTER</h4></a>
+                </div>
 
                 </div >
-                <div class="col-8">
+                <div class="col-4">
+
+                <div class="image" align="center">
+                    <a href="#" onclick="changeContent(2); return false;">
+                    <img class="avatar" src="../images/blog/scrum/avatar2.png" alt=""/><h4>PRODUCT OWNER</h4></div><br>
+                    </a>
+                </div >
+                <div class="col-4" align="center">
+                <div class="image" >
+                    <a href="#" onclick="changeContent(3); return false;">
+                    <img class="avatar" src="../images/blog/scrum/avatar1.png" alt="" /><h4>DEVELOPERS</h4></div><br>
+                    </a >
+                </div >
+        <div id="contentDiv">
+        <div class="content" id="content1">
+            <div >
+                <br>
+                <h4 align="center">SCRUM MASTER</h4>
+                Accountable for establishing scrum as defined in the scrum Guide and for scrum team effectiveness.
+            </div>
+        </div>
+        <div class="content" id="content2">
+            <br>
+            <div >
+                <h4 align="center">PRODUCT OWNER</h4>
+                Responsible for maximizing the value of the product from the work of scrum team.
+<br>Accountable for:
+                <ul>
+                <li>
+                     Developing and explicitly communicating the product goal               </li>
+                    <li>
+                        Create and communicating product backlog items
+                    </li>
+                    <li>
+                        Order Product Backlog items
+                    </li>
+                    <li>Ensure product backlog is visible ,transparent and understood</li>
+
+                </ul>
+
+
+
+            <ul>
+            </ul>
+            </div>
+        </div>
+        <div class="content" id="content3">
+           <br>
+            <div >
+            <h4 >DEVELOPERS</h4>
+            Responsibilities of Developers
+            <ul>
+                <li>Creating a plan for the Sprint, the Sprint Backlog;
+
+                </li>
+                <li>
+                    Instilling quality by adhering to a Definition of Done;
+
+
+
+                </li>
+                <li>Adapting their plan each day toward the Sprint Goal; and,
+</li>
+                <li>Holding each other accountable as professionals.
+</li>
+
+            </ul>
+            </div>
+</div>
+        </div>
                 </div>
 
                 </div>
+                <hr>
+			<h2 align="center">STILL UPDATING</h2>
 
-                <div class="image"><img class="avatar" src="../images/blog/scrum/avatar2.png" alt=""/><h4>PRODUCT OWNER</h4></div><br>
-                <div class="image"><img class="avatar" src="../images/blog/scrum/avatar1.png" alt="" /><h4>DEVELOPERS</h4></div><br>
+
+
         </section>
 
 
@@ -102,6 +181,18 @@
 <script src="../assets/js/breakpoints.min.js"></script>
 <script src="../assets/js/util.js"></script>
 <script src="../assets/js/main.js"></script>
+  <script>
+        function changeContent(contentId) {
+            // Hide all content divs
+            var allContent = document.querySelectorAll('.content');
+            for (var i = 0; i < allContent.length; i++) {
+                allContent[i].style.display = 'none';
+            }
 
+            // Show the selected content div
+            var selectedContent = document.getElementById('content' + contentId);
+            selectedContent.style.display = 'block';
+        }
+    </script>
 </body>
 </html>
